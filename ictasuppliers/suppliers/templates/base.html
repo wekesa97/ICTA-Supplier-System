@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>ICT Authority.</title>
+	  <!-- Meta Description -->
+    <meta name="description" content="The Information and Communication Technology (ICT) Authority is a State Corporation under the Ministry of Information Communication and Technology.">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="ICT, Communications">   
+    <link href="{% static "main.css" %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}"/> 
+    <link href="{% static "bootstrap.min.css" %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <section>
+        d
+        <div class="top">
+            <a href="#home"><img src="{% static "images/ictalogo.png" %}" class="logo"></a>
+            
+            <div class="nav-links ">
+                <ul >
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home">Who We Are</a></li>
+                    <li><a href="#home">Projects</a></li>
+                    <li><a href="#home">ICT Standards</a></li>
+                    <li><a href="#home">Acreditations</a></li>
+                    <li><a href="#about">Citizens Training</a></li>
+                    <li><a href="#projects">Tenders</a></li>
+                    <li><a href="#contacts">Feedback</a></li>
+                    {% if not request.user.is_authenticated %}
+                          <li><a href="{% url 'signup'%}">Sign Up</a>
+                    {% endif %}
+
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'signup'%}">You are logged in as {{request.user.username}}</a>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login'%}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        
+        </div>
+        
+    
+</section>
+
+{% block content %}
+
+{% endblock content%}
+
+
+<footer>
+  <div class="container">
+    <div class="footlist clearfix">
+      <ul>
+        <li>
+          <h1>Get In Touch</h1>
+          <p>Connect with us online</p>
+          <div class="social_icons">
+            <a title="Facebook" href="https://web.facebook.com/ICTAuthorityKE?_rdc=1&amp;_rdr" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a title="Twitter" href="https://twitter.com/ICTAuthorityKE" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a title="Email" href="mailto:communications@ict.go.ke" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+            <a title="LinkedIn" href="https://www.linkedin.com/company/kenya-ict-board" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </li>
+
+        <li>
+          <h1>Quick Links</h1>
+          <ul>
+          
+                                                <li>
+                  <a href="http://www.information.go.ke/" target="_blank">
+                    Ministry of ICT                      </a>
+                </li>
+                                <li>
+                  <a href="https://brand.ke/" target="_blank">
+                    KEPROBA                      </a>
+                </li>
+                                <li>
+                  <a href="https://www.ecitizen.go.ke/" target="_blank">
+                    E-citizen Portal                      </a>
+                </li>
+                                <li>
+                  <a href="https://www.epckenya.org/" target="_blank">
+                    Export Promotion Council(EPC)                      </a>
+                </li>
+                                <li>
+                  <a href="https://epzakenya.com/" target="_blank">
+                    The Export Processing Zones Authority                      </a>
+                </li>
+                                <li>
+                  <a href="https://www.hudumakenya.go.ke/" target="_blank">
+                    Huduma Centre                      </a>
+                </li>
+                                <li>
+                  <a href="http://www.invest.go.ke/" target="_blank">
+                    KenInvest                      </a>
+                </li>
+                                <li>
+                  <a href="https://konza.go.ke/" target="_blank">
+                    Konza Techno City                      </a>
+                </li>
+                                <li>
+                  <a href="https://www.president.go.ke/" target="_blank">
+                    The Presidency                      </a>
+                </li>
+                                <li>
+                  <a href="http://vision2030.go.ke/" target="_blank">
+                    Kenya Vision 2030                      </a>
+                </li>
+                           
+           
+          </ul>
+        </li>
+        <li>
+          <h1>Affiliated Sites</h1>
+          <ul>
+                                                <li>
+                  <a href="https://www.connected.go.ke/" target="_blank">
+                    Connected Summit                      </a>
+                </li>
+                                <li>
+                  <a href="https://www.digischool.go.ke/" target="_blank">
+                    DigiSchool                      </a>
+                </li>
+                                <li>
+                  <a href="https://digitalent.go.ke/" target="_blank">
+                    DigiTalent                      </a>
+                </li>
+                                <li>
+                  <a href="https://opendata.go.ke/" target="_blank">
+                    Kenya Open Data                      </a>
+                </li>
+                          </ul>
+        </li>
+        
+        <li>
+          <h1>Resources</h1>
+          <ul>
+            <!-- <li><a href="presentations">Presentations</a></li>
+            <li><a href="reports">Reports</a></li> -->
+            <li><a href="https://icta.go.ke/tenders">Tenders</a></li>
+            <li>
+              <a href="https://icta.go.ke/faqs">Frequently Asked Questions (FAQs)</a>
+            </li>
+            <li>
+              <a href="https://icta.go.ke/contact-us">Contact Us</a>
+            </li>
+          </ul>
+          <!-- Subscription -->
+          <div class="clearfix"></div>
+          <div class="c_newsletter col5">
+            
+            <p>
+              To receive regular News, Updates, and Information about ICT
+              Authority.
+            </p>
+            <form id="subscribe" autocomplete="false" onsubmit="return false;" action="https://icta.go.ke//app/newsletter/subscribe.php" method="post">
+              <input type="email" name="newsletter" placeholder="Your Email" id="email">
+              <button type="submit" id="btn_subscribe" name="submit">subscribe now</button>
+            <!-- <p>By subscribing, you agree to the Terms of Service</p>-->
+            </form>
+            <div class="subscribeStatusMsg"></div>
+          </div>
+        </li>
+        <li>
+          <h1>ICT Authority Links</h1>
+          <ul>
+                                                <li>
+                  <a href="https://whitebox.go.ke/" target="_blank">
+                    WhiteBox                      </a>
+                </li>
+                          </ul>
+         
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+ 
+</footer>
+<section class="footer_btm">
+  <a class="scroll-top" href="javascript:void(0)"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+  <div class="container">
+    <p>© 2022 Copyright ICT Authority. All Rights Reserved.</p>
+  </div>
+</section>
+
+
+
+</body>
+</html>

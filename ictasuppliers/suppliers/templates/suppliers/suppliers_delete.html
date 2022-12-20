@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <div class="">
+    <h1>ARE YOU SURE YOU WANT TO DELETE A SUPPLIERS</h1>
+    <a href='{% url 'suppliers:suppliers-list' %}'>Go back to Suppliers</a>
+        <div>
+            <form action='.' method='post'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>        
+    </div>
+</section>
+{% endblock content %}
